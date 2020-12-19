@@ -1,9 +1,9 @@
 ---
-title: 'Reference'
+title: 'Getting Started'
 date: '2020-01-03'
 ---
 
-Index Reference
+Index of the getting started
 
 Lorizzle ipsum dolizzle sit yo, consectetuer adipiscing elizzle. Nullam go to hizzle velizzle, boom shackalack volutpizzle, suscipizzle quizzle, gravida vizzle, arcu. Pellentesque eget tortor. Sizzle erizzle. Crazy at dolor dapibizzle turpis fizzle tempor. Bling bling pellentesque nibh izzle turpizzle. Check out this izzle tortor. Sure mammasay mammasa mamma oo sa rhoncizzle nisi. In hac dang dawg dictumst. Funky fresh dapibizzle. Fo shizzle tellus shiz, pretium eu, mattis ac, eleifend vitae, nunc. Crackalackin suscipit. Integer mofo fizzle sed nizzle.
 

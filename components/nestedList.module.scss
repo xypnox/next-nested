@@ -1,0 +1,28 @@
+@mixin hover() {
+  &:hover {
+    text-decoration: none;
+    color: #ff0066;
+  }
+}
+
+.folderLabel {
+  display: block;
+  font-weight: bold;
+  margin: 20px 0 5px;
+  color: #333;
+  @include hover();
+}
+
+.folder {
+  padding-left: 10px;
+}
+
+.label {
+  color: #666;
+  @include hover();
+}
+.folderContents {
+  margin-left: 10px;
+  padding-left: 10px;
+  border-left: 4px solid #f0f0f0;
+}

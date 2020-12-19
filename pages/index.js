@@ -1,26 +1,36 @@
 import Head from 'next/head';
 import Layout, { siteTitle } from '../components/layout';
+
 import utilStyles from '../styles/utils.module.css';
 import { getSortedPostsData } from '../lib/posts';
 
-import { getSortedNestedData } from '../lib/docs2';
+import { getSortedNestedData, getFolderNestedData } from '../lib/docs2';
 import Link from 'next/link';
 import Date from '../components/date';
+import NestedList from '../components/nestedList';
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
   // console.log('ALL POST DATA: ', allPostsData);
   const allDocsData = await getSortedNestedData('docs');
   // console.log(allDocsData);
+
+  const allFolderNestedData = await getFolderNestedData('docs');
+  // console.log(allFolderNestedData);
   return {
     props: {
       allPostsData,
       allDocsData,
+      allFolderNestedData,
     },
   };
 }
 
-export default function Home({ allPostsData, allDocsData }) {
+export default function Home({
+  allPostsData,
+  allDocsData,
+  allFolderNestedData,
+}) {
   return (
     <Layout home>
       <Head>
@@ -65,6 +75,7 @@ export default function Home({ allPostsData, allDocsData }) {
           ))}
         </ul>
       </section>
+      <NestedList dirData={allFolderNestedData}></NestedList>
     </Layout>
   );
 }
