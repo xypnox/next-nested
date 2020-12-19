@@ -2,19 +2,25 @@ import Head from 'next/head';
 import Layout, { siteTitle } from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
 import { getSortedPostsData } from '../lib/posts';
+
+import { getSortedNestedData } from '../lib/docs2';
 import Link from 'next/link';
 import Date from '../components/date';
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
+  // console.log('ALL POST DATA: ', allPostsData);
+  const allDocsData = await getSortedNestedData('docs');
+  // console.log(allDocsData);
   return {
     props: {
       allPostsData,
+      allDocsData,
     },
   };
 }
 
-export default function Home({ allPostsData }) {
+export default function Home({ allPostsData, allDocsData }) {
   return (
     <Layout home>
       <Head>
@@ -33,6 +39,22 @@ export default function Home({ allPostsData }) {
           {allPostsData.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>
               <Link href={`/posts/${id}`}>
+                <a>{title}</a>
+              </Link>
+              <br />
+              <small className={utilStyles.lightText}>
+                <Date dateString={date} />
+              </small>
+            </li>
+          ))}
+        </ul>
+      </section>
+      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+        <h2 className={utilStyles.headingLg}>Docs</h2>
+        <ul className={utilStyles.list}>
+          {allDocsData.map(({ id, date, title }) => (
+            <li className={utilStyles.listItem} key={id}>
+              <Link href={`/docs/${id}`}>
                 <a>{title}</a>
               </Link>
               <br />
