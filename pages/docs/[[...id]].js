@@ -37,7 +37,6 @@ const pageFileCache = {};
 export const getStaticProps = async ({ params }) => {
   // Retrieve full path from a cache. Generate cache if it doesnt exist.
   // id is undefined at index '/', set slugpath as '' instead
-  console.log(params);
   let slugPath;
   if (params.id) {
     slugPath = params.id.join('/');

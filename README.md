@@ -1,6 +1,6 @@
 # NextJS Nested demo
 
-_by xypnox_
+You can view the deployed version here: https://next-nested.vercel.app/
 
 This is the source code of the sample website to demonstrate nested markdown structure rendered in next.js.
 
@@ -64,3 +64,9 @@ The Docs can also be displayed in a flattened manner as well but have urls in sa
 ## Credits
 
 The code for pageFileCache was first implemented by @davecaruso. I separated the file reading for reusability in `lib/docs`, and implemented the component/functions to process and display the tree structure.
+
+---
+
+<center><i>
+With :heart: by xypnox
+</i></center>
