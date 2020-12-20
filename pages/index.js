@@ -4,33 +4,25 @@ import Layout, { siteTitle } from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
 import { getSortedPostsData } from '../lib/posts';
 
-import { getSortedNestedData, getFolderNestedData } from '../lib/docs2';
+import { getFolderNestedData } from '../lib/docs2';
 import Link from 'next/link';
 import Date from '../components/date';
 import NestedList from '../components/nestedList';
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
-  // console.log('ALL POST DATA: ', allPostsData);
-  const allDocsData = await getSortedNestedData('docs');
-  // console.log(allDocsData);
-
   const allFolderNestedData = await getFolderNestedData('docs');
-  // console.log(allFolderNestedData);
+  console.log(JSON.stringify(allFolderNestedData, null, 4));
+
   return {
     props: {
       allPostsData,
-      allDocsData,
       allFolderNestedData,
     },
   };
 }
 
-export default function Home({
-  allPostsData,
-  allDocsData,
-  allFolderNestedData,
-}) {
+export default function Home({ allPostsData, allFolderNestedData }) {
   return (
     <Layout home>
       <Head>
@@ -49,22 +41,6 @@ export default function Home({
           {allPostsData.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>
               <Link href={`/posts/${id}`}>
-                <a>{title}</a>
-              </Link>
-              <br />
-              <small className={utilStyles.lightText}>
-                <Date dateString={date} />
-              </small>
-            </li>
-          ))}
-        </ul>
-      </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Docs</h2>
-        <ul className={utilStyles.list}>
-          {allDocsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href={`/docs/${id}`}>
                 <a>{title}</a>
               </Link>
               <br />

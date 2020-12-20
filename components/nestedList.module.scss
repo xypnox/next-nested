@@ -10,11 +10,15 @@
   font-weight: bold;
   margin: 20px 0 5px;
   color: #333;
+  font-size: 2rem;
   @include hover();
 }
 
 .folder {
   padding-left: 10px;
+  .folder .folderLabel {
+    font-size: 1.2rem;
+  }
 }
 
 .label {
