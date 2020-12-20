@@ -12,7 +12,7 @@ export default function NestedList({ dirData }) {
 
 function File({ file }) {
   return (
-    <div className='file'>
+    <div className={styles.file}>
       <Link href={`/docs/${file.id}`}>
         <a className={styles.label}>{file.matter.title}</a>
       </Link>

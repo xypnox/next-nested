@@ -10,7 +10,7 @@
   font-weight: bold;
   margin: 20px 0 5px;
   color: #333;
-  font-size: 2rem;
+  font-size: 1.2rem;
   @include hover();
 }
 
@@ -29,4 +29,8 @@
   margin-left: 10px;
   padding-left: 10px;
   border-left: 4px solid #f0f0f0;
+}
+
+.file {
+  font-size: 1rem;
 }
