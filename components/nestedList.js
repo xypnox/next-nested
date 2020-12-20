@@ -24,13 +24,6 @@ function File({ file }) {
 }
 
 function Folder({ folder, children }) {
-  // const [isOpen, setIsOpen] = useState(false);
-
-  // const handleToggle = e => {
-  //   e.preventDefault();
-  //   setIsOpen(!isOpen);
-  // };
-
   return (
     <div className={styles.folder}>
       <Link href={`/docs/${folder.id}`}>
@@ -39,9 +32,7 @@ function Folder({ folder, children }) {
           <div className={styles.slugpath}>{`/docs/${folder.id}`}</div>
         </a>
       </Link>
-      {/* <Collapsible isOpen={isOpen}> */}
       <div className={styles.folderContents}>{children}</div>
-      {/* </Collapsible> */}
     </div>
   );
 }
@@ -49,12 +40,12 @@ function Folder({ folder, children }) {
 const TreeRecursive = ({ data }) => {
   return data.map((item) => {
     if (item.type === 'file') {
-      return <File file={item} />;
+      return <File file={item} key={`item-/docs/${item.id}`} />;
     }
 
     if (item.type === 'folder') {
       return (
-        <Folder folder={item}>
+        <Folder folder={item} key={`item-/docs/${item.id}`}>
           <TreeRecursive data={item.files} />
         </Folder>
       );
