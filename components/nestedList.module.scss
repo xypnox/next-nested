@@ -8,7 +8,7 @@
 .folderLabel {
   display: block;
   font-weight: bold;
-  margin: 20px 0 5px;
+  margin: 10px 0 5px;
   color: #333;
   font-size: 1.2rem;
   @include hover();
@@ -33,4 +33,10 @@
 
 .file {
   font-size: 1rem;
+}
+
+.slugpath {
+  font-size: 0.7rem;
+  color: #999;
+  padding-bottom: 10px;
 }

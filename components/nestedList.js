@@ -14,7 +14,10 @@ function File({ file }) {
   return (
     <div className={styles.file}>
       <Link href={`/docs/${file.id}`}>
-        <a className={styles.label}>{file.matter.title}</a>
+        <a className={styles.label}>
+          {file.matter.title}{' '}
+          <div className={styles.slugpath}>{`/docs/${file.id}`}</div>
+        </a>
       </Link>
     </div>
   );
@@ -31,7 +34,10 @@ function Folder({ folder, children }) {
   return (
     <div className={styles.folder}>
       <Link href={`/docs/${folder.id}`}>
-        <a className={styles.folderLabel}>{folder.matter.title}</a>
+        <a className={styles.folderLabel}>
+          {folder.matter.title}{' '}
+          <div className={styles.slugpath}>{`/docs/${folder.id}`}</div>
+        </a>
       </Link>
       {/* <Collapsible isOpen={isOpen}> */}
       <div className={styles.folderContents}>{children}</div>
