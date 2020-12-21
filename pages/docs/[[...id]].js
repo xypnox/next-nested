@@ -1,5 +1,5 @@
 import path from 'path';
-import { getPathList, getPostData } from '../../lib/docs';
+import { getPathList, getPostData, getNestedPathList } from '../../lib/docs';
 import Head from 'next/head';
 import Layout from '../../components/layout';
 import utilStyles from '../../styles/utils.module.css';
