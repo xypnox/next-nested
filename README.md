@@ -59,7 +59,7 @@ The Docs can also be displayed in a flattened manner as well but have urls in sa
 
 ## Known Issues
 
-- The folders in Docs can't have same name one after the other. This is a deficiency in the algorithm and should not be a major issue. This only affects the foldername and the title can always remain same!
+- ~~The folders in Docs can't have same name one after the other. This is a deficiency in the algorithm and should not be a major issue. This only affects the foldername and the title can always remain same!~~ Solved
 
 ## Credits
 
